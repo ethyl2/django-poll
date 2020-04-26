@@ -1,0 +1,7 @@
+body {
+  background: white url('images/candy_background.jpg');
+  background-size: cover;
+}
+li a {
+  color: rgb(126, 31, 121);
+}
