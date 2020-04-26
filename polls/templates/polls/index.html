@@ -1,0 +1,26 @@
+<h1
+  style="
+    font-size: 4rem;
+    color: white;
+    font-family: sans-serif;
+    background: turquoise;
+    padding: 1rem;
+  "
+>
+  Recent Polls
+</h1>
+{% if latest_question_list %}
+<ul style="list-style-type: '&#127852;';">
+  {% for question in latest_question_list %}
+  <li style="font-family: sans-serif; padding: 1rem;">
+    <a
+      style="text-decoration: none;"
+      href="{% url 'polls:detail' question.id %}"
+      >{{ question.question_text }}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}

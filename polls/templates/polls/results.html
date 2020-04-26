@@ -1,0 +1,26 @@
+<h1
+  style="
+    font-size: 3.5rem;
+    color: white;
+    font-family: sans-serif;
+    background: turquoise;
+    padding: 1rem;
+  "
+>
+  {{ question.title }}
+</h1>
+<h2 style="font-size: 2.5rem; font-family: sans-serif; padding: 1rem;">
+  {{ question.question_text }}
+</h2>
+
+<ul style="list-style-type: '&#127852;';">
+  {% for choice in question.choice_set.all %}
+  <li style="font-family: sans-serif; padding: 1rem;">
+    {{ choice.choice_text }} has {{choice.votes}} vote(s)
+  </li>
+  {% endfor %}
+</ul>
+
+<a style="text-decoration: none; font-family: sans-serif; padding: 1rem;" href="{% url 'polls:detail' question.id %}">Vote again?</a>
+<a style="text-decoration: none; font-family: sans-serif; padding: 1rem;" href="{% url 'polls:index' %}"
+      >Back to Polls List</a
